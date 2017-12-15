@@ -1,0 +1,13 @@
+e40c2271219510920411f0affa539466 *DESCRIPTION
+9c25e1cdc3b5122842a6a70fab49a522 *LICENSE
+412f17f852979c47a30636e04340ead2 *NAMESPACE
+6ad75af60b9168435945496e9c06127c *R/xmR.R
+89a3942310fffcb440acfd7f8529bc9f *R/xmR_chart.R
+4e03df7b92d6f6f7ab16fb6a432f09a9 *man/xmr.Rd
+3de0ce55544cfbf515c2f778d805db3a *man/xmr_chart.Rd
+396576b00b5563b1374a99b18c9c8159 *tests/testthat.R
+38e0f9e3621510e2f8ae73389d0fc48f *tests/testthat/test-xmr_basic.R
+c2d8f197cf099f67c5a31abfb51d1bc0 *tests/testthat/test-xmr_recalc_lowerlongrun.R
+2e4691e7d6a4ccc7f593a82ae9252aa1 *tests/testthat/test-xmr_recalc_shortruns.R
+9d0aa56ac7c02f101de2406472a3e7d6 *tests/testthat/test-xmr_recalc_shortruns_4.R
+9014ba492b587360a0db615d4c7405a3 *tests/testthat/test-xmr_recalc_upperlongrun.R
