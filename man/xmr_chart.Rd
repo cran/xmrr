@@ -4,13 +4,13 @@
 \alias{xmr_chart}
 \title{Generate the XMR chart for XMR data}
 \usage{
-xmr_chart(dataframe, time, measure, boundary_linetype = "dashed",
+xmr_chart(df, time, measure, boundary_linetype = "dashed",
   central_linetype = "dotted", boundary_colour = "#d02b27",
   point_colour = "#7ECBB5", point_size = 2, line_width = 0.5,
   text_size = 9)
 }
 \arguments{
-\item{dataframe}{Output from xmR()}
+\item{df}{Output from xmR()}
 
 \item{time}{Time column}
 
@@ -31,7 +31,7 @@ xmr_chart(dataframe, time, measure, boundary_linetype = "dashed",
 \item{text_size}{Size of chart text. Defaults to 9.}
 }
 \description{
-Useful for diagnostics on xmR, and just visualizing the data.
+Useful for diagnostics on xmr, and just visualizing the data.
 }
 \examples{
 \donttest{
