@@ -1,36 +1,42 @@
 #'Generate the XMR data for any time-series data.
-#'@description Will be used to calculate XMR data. 
+#'@description Used to calculate XMR data. 
 #'
-#'@param df The dataframe containing the time-series data. 
-#'Must be in tidy format.
-#'At least 1 variable for time and one variable for measure.
+#'@param df The dataframe or tibble to calculate from.
+#'Data must be in a tidy format.
+#'At least one variable for time and one variable for measure.
 #'@param measure The column containing the measure. Must be in numeric format.
+#'@param recalc Logical: if you'd like it to recalculate bounds. Defaults to True
+#'@param reuse Logical: Should points be re-used in calculations? Defaults to False
 #'@param interval The interval you'd like to use to calculate the averages. 
 #'Defaults to 5.
-#'@param recalc Logical: if you'd like it to recalculate bounds. Defaults to False
-#'@param reuse Logical: Should points be re-used in calculations? Defaults to False
-#'@param testing Logical to print test results
 #'@param longrun Used to determine rules for long run. First point is the 'n' of points used to recalculate with, and the second is to determine what qualifies as a long run. Default is c(5,8) which uses the first 5 points of a run of 8 to recalculate the bounds. If a single value is used, then that value is used twice i.e. c(6,6))
 #'@param shortrun Used to determine rules for a short run. The first point is the minimum number of points within the set to qualify a shortrun, and the second is the length of a possible set. Default is c(3,4) which states that 3 of 4 points need to pass the test to be used in a calculation. If a single value is used, then that value is used twice i.e. c(3,3))
+#'@param testing Logical to print test results
 #'@examples
-#'\donttest{
-#'df <- xmr(df, "Measure", recalc = T)
-#'}
-#'\donttest{
-#'df <- xmr(df, "Measure", recalc = T, shortrun = c(3,4), longrun = c(5,8))
-#'}
+#'\dontrun{ xmr(df, "Measure", recalc = T) }
+#'\dontrun{ xmr(df, "Measure", recalc = T, shortrun = c(3,4), longrun = c(5,8))}
 #'@import dplyr
 #'@import ggplot2
 #'@import tidyr
 #'@export xmr
-xmr <- function(df, measure, interval, recalc, reuse, testing, longrun, shortrun) {
+xmr <- function(df, measure, recalc = T, reuse, interval, longrun, shortrun, testing) {
   
-  . <- "NA"
+  . <- "donotuse"
+  `Order` <- .
+  `Central Line` <- .
+  `Average Moving Range` <- .
+  `Lower Natural Process Limit` <- .
+  `Upper Natural Process Limit` <- .
+  
+  if(missing(measure)){
+    measure <- names(df)[2]
+    }
+  
   if (missing(interval)){
     interval <- 5
     }
   if (missing(recalc)){
-    recalc <- F
+    recalc <- T
     }
   if (missing(testing)){
     testing <- F
@@ -92,14 +98,14 @@ xmr <- function(df, measure, interval, recalc, reuse, testing, longrun, shortrun
   }
   #starting conditions
   starter <- function(dat){
-    original_cent <- mean(dat[[measure]][1:interval])
+    original_cent <- mean(dat[[measure]][1:interval], na.rm = T)
     dat$`Central Line` <- original_cent
     #moving range
     dat$`Moving Range` <- abs(dat[[measure]] - dplyr::lag(dat[[measure]], 1))
     for (i in 1:(nrow(dat) - 1)) {
       dat$`Moving Range`[i + 1] <- abs(dat[[measure]][i] - dat[[measure]][i + 1])
     }
-    dat$`Average Moving Range` <- mean(dat$`Moving Range`[2:(interval)])
+    dat$`Average Moving Range` <- mean(dat$`Moving Range`[2:(interval)], na.rm = T)
     dat$`Average Moving Range`[1] <- NA
     dat <- limits(dat)
     return(dat)
@@ -287,9 +293,9 @@ xmr <- function(df, measure, interval, recalc, reuse, testing, longrun, shortrun
     #upper longruns
     if (side == "upper" && run == "long"){
        dat_sub <- dat %>%
-        filter(., .[[measure]] > .$`Central Line` &
-                 !(.$Order %in% points)) %>%
-        arrange(., .$Order)
+        filter(., .[[measure]] > `Central Line` &
+                 !(Order %in% points)) %>%
+        arrange(., Order)
        dat_sub <- run_subset(dat_sub, "Order")
        rep <- nrow(dat_sub)
        while (rep >= l){
@@ -301,8 +307,8 @@ xmr <- function(df, measure, interval, recalc, reuse, testing, longrun, shortrun
            print(calcpoints)
          }
          dat_sub <- dat %>%
-           filter(., .[[measure]] > .$`Central Line` & !(.$Order %in% points)) %>%
-           arrange(., .$Order)
+           filter(., .[[measure]] > `Central Line` & !(Order %in% points)) %>%
+           arrange(., Order)
          dat_sub <- run_subset(dat_sub, "Order")
          rep <- nrow(dat_sub)
         }
@@ -310,11 +316,11 @@ xmr <- function(df, measure, interval, recalc, reuse, testing, longrun, shortrun
     #lower longruns
     else if (side == "lower" && run == "long"){
       dat_sub <- dat %>%
-        filter(., .[[measure]] < .$`Central Line` &
+        filter(., .[[measure]] < `Central Line` &
                  #abs(.[[measure]] - `Central Line`) <
                  #abs(.[[measure]] - `Lower Natural Process Limit`) &
-                 !(.$Order %in% points)) %>%
-        arrange(., .$Order)
+                 !(Order %in% points)) %>%
+        arrange(., Order)
       dat_sub <- run_subset(dat_sub, "Order")
       rep <- nrow(dat_sub)
       while (rep >= l){
@@ -326,8 +332,8 @@ xmr <- function(df, measure, interval, recalc, reuse, testing, longrun, shortrun
           print(calcpoints)
         }
         dat_sub <- dat %>%
-          filter(., .[[measure]] < .$`Central Line` & !(.$Order %in% points)) %>%
-          arrange(., .$Order)
+          filter(., .[[measure]] < `Central Line` & !(Order %in% points)) %>%
+          arrange(., Order)
         dat_sub <- run_subset(dat_sub, "Order")
         rep <- nrow(dat_sub)
       }
@@ -432,5 +438,8 @@ xmr <- function(df, measure, interval, recalc, reuse, testing, longrun, shortrun
     df$`Lower Natural Process Limit` <- NA
     df$`Upper Natural Process Limit` <- NA
   }
+  
+  class(df) <- c(class(df), "xmr")
+  
   return(df)
 }

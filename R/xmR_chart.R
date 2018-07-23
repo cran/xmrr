@@ -12,9 +12,7 @@
 #'@param line_width Width of lines. Defaults to 0.5.
 #'@param text_size Size of chart text. Defaults to 9.
 #'@examples
-#'\donttest{
-#'xmr_chart(df, "Year", "Measure")
-#'}
+#'\dontrun{ xmr_chart(df, "Year", "Measure") }
 #'@import dplyr
 #'@import ggplot2
 #'@import tidyr
@@ -27,10 +25,19 @@ xmr_chart <- function(df, time, measure,
                       point_size = 2,
                       line_width = 0.5,
                       text_size = 9){
-    . <- "Shut up"
+  
+  
+  if("Upper Natural Process Limit" %in% names(df)){
+  
+    . <- "donotuse"
+    `Order` <- .
     `Central Line` <- .
+    `Average Moving Range` <- .
     `Lower Natural Process Limit` <- .
     `Upper Natural Process Limit` <- .
+    
+    if(missing(time)){time <- names(df)[1]}
+    if(missing(measure)){measure <- names(df)[2]}
     
     plot <- ggplot2::ggplot(df, aes(as.character(df[[time]]), group = 1)) +
       geom_line(aes(y = `Central Line`),
@@ -68,5 +75,5 @@ xmr_chart <- function(df, time, measure,
             axis.text.x = element_text(colour = "#000000", size = text_size-2),
             axis.title.x = element_text(size = text_size, face = "bold"))
     return(plot)
- 
+  } else {warning("Data has not been analyzed using xmr().")}
 }
