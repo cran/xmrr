@@ -1,10 +1,8 @@
 context("Calculate XMR Lower Long Run Recalculation")
 
 library(testthat)
-library(xmrr)
 library(dplyr)
 library(tidyr)
-
 
 
 Measure <- c(58, 57, 69, 62, 66, 58, 66, 62,

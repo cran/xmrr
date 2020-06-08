@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-<title>Charts</title>
+<title>Introduction</title>
 
 <script type="text/javascript">
 window.onload = function() {
@@ -201,7 +201,7 @@ hr {
 </head>
 
 <body>
-<p>#Introduction</p>
+<h1>Introduction</h1>
 
 <p>XMR control charts are useful when determining if there are significant trends in data. XMR charts have two key assumptions: one is that the measurements of value happen over time, and the other is that each measurement of time has exactly one measurement of value. </p>
 
@@ -209,7 +209,7 @@ hr {
 
 <hr/>
 
-<p>#Arguments</p>
+<h1>Arguments</h1>
 
 <p>The arguments for <code>xmr()</code> are: </p>
 
@@ -319,181 +319,6 @@ hr {
 
 <p>Output data looks like this:</p>
 
-<table><thead>
-<tr>
-<th align="center">Time</th>
-<th align="center">Measure</th>
-<th align="center">Central Line</th>
-<th align="center">Moving Range</th>
-<th align="center">Average Moving Range</th>
-<th align="center">Lower Natural Process Limit</th>
-<th align="center">Upper Natural Process Limit</th>
-</tr>
-</thead><tbody>
-<tr>
-<td align="center">2000</td>
-<td align="center">54</td>
-<td align="center">57.400</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-</tr>
-<tr>
-<td align="center">2001</td>
-<td align="center">56</td>
-<td align="center">57.400</td>
-<td align="center">2</td>
-<td align="center">5.750</td>
-<td align="center">42.105</td>
-<td align="center">72.695</td>
-</tr>
-<tr>
-<td align="center">2002</td>
-<td align="center">59</td>
-<td align="center">57.400</td>
-<td align="center">3</td>
-<td align="center">5.750</td>
-<td align="center">42.105</td>
-<td align="center">72.695</td>
-</tr>
-<tr>
-<td align="center">2003</td>
-<td align="center">65</td>
-<td align="center">57.400</td>
-<td align="center">6</td>
-<td align="center">5.750</td>
-<td align="center">42.105</td>
-<td align="center">72.695</td>
-</tr>
-<tr>
-<td align="center">2004</td>
-<td align="center">53</td>
-<td align="center">57.400</td>
-<td align="center">12</td>
-<td align="center">5.750</td>
-<td align="center">42.105</td>
-<td align="center">72.695</td>
-</tr>
-<tr>
-<td align="center">2005</td>
-<td align="center">64</td>
-<td align="center">57.400</td>
-<td align="center">11</td>
-<td align="center">5.750</td>
-<td align="center">42.105</td>
-<td align="center">72.695</td>
-</tr>
-<tr>
-<td align="center">2006</td>
-<td align="center">65</td>
-<td align="center">57.400</td>
-<td align="center">1</td>
-<td align="center">5.750</td>
-<td align="center">42.105</td>
-<td align="center">72.695</td>
-</tr>
-<tr>
-<td align="center">2007</td>
-<td align="center">61</td>
-<td align="center">57.400</td>
-<td align="center">4</td>
-<td align="center">5.750</td>
-<td align="center">42.105</td>
-<td align="center">72.695</td>
-</tr>
-<tr>
-<td align="center">2008</td>
-<td align="center">60</td>
-<td align="center">57.400</td>
-<td align="center">1</td>
-<td align="center">5.750</td>
-<td align="center">42.105</td>
-<td align="center">72.695</td>
-</tr>
-<tr>
-<td align="center">2009</td>
-<td align="center">51</td>
-<td align="center">57.400</td>
-<td align="center">9</td>
-<td align="center">5.750</td>
-<td align="center">42.105</td>
-<td align="center">72.695</td>
-</tr>
-<tr>
-<td align="center">2010</td>
-<td align="center">53</td>
-<td align="center">57.400</td>
-<td align="center">2</td>
-<td align="center">5.750</td>
-<td align="center">42.105</td>
-<td align="center">72.695</td>
-</tr>
-<tr>
-<td align="center">2011</td>
-<td align="center">53</td>
-<td align="center">57.400</td>
-<td align="center">0</td>
-<td align="center">5.750</td>
-<td align="center">42.105</td>
-<td align="center">72.695</td>
-</tr>
-<tr>
-<td align="center">2012</td>
-<td align="center">80</td>
-<td align="center">79.333</td>
-<td align="center">27</td>
-<td align="center">12.333</td>
-<td align="center">46.527</td>
-<td align="center">112.140</td>
-</tr>
-<tr>
-<td align="center">2013</td>
-<td align="center">76</td>
-<td align="center">79.333</td>
-<td align="center">4</td>
-<td align="center">12.333</td>
-<td align="center">46.527</td>
-<td align="center">112.140</td>
-</tr>
-<tr>
-<td align="center">2014</td>
-<td align="center">82</td>
-<td align="center">79.333</td>
-<td align="center">6</td>
-<td align="center">12.333</td>
-<td align="center">46.527</td>
-<td align="center">112.140</td>
-</tr>
-<tr>
-<td align="center">2015</td>
-<td align="center">77</td>
-<td align="center">79.333</td>
-<td align="center">5</td>
-<td align="center">12.333</td>
-<td align="center">46.527</td>
-<td align="center">112.140</td>
-</tr>
-<tr>
-<td align="center">2016</td>
-<td align="center">81</td>
-<td align="center">79.333</td>
-<td align="center">4</td>
-<td align="center">12.333</td>
-<td align="center">46.527</td>
-<td align="center">112.140</td>
-</tr>
-<tr>
-<td align="center">2017</td>
-<td align="center">85</td>
-<td align="center">79.333</td>
-<td align="center">4</td>
-<td align="center">12.333</td>
-<td align="center">46.527</td>
-<td align="center">112.140</td>
-</tr>
-</tbody></table>
-
 <p>The only mandatory arguments are <strong>df</strong>, because the function needs to operate on a dataframe, and <strong>measure</strong> because the function needs to be told which column contains the measurements. Everything else has been set to what I believe is a safe and sensible default. </p>
 
 <p>In our shop, we typically run the following rules. Since they are the default, there is no need to specify them directly:</p>
@@ -530,7 +355,7 @@ hr {
 <p>The arguments for <code>xmr_chart()</code> are: </p>
 
 <ul>
-<li><p><strong>df</strong>: Output from xmr()</p></li>
+<li><p><strong>dataframe</strong>: Output from xmr()</p></li>
 <li><p><strong>time</strong>: The column containing the time variable for the x-axis.</p></li>
 <li><p><strong>measure</strong>: The column containing the measure for the y-axis. </p></li>
 <li><p><strong>boundary_linetype</strong>: Type of line for upper and lower boundary lines. Defaults to &ldquo;dashed&rdquo;.</p></li>
@@ -544,13 +369,11 @@ hr {
 
 <p>There are defaults set for most arguments, so all the user <em>needs</em> to supply are the column names for the Time and Measurement column unless they want some slight modification of the default chart.</p>
 
-<pre><code class="r">xmr_chart(df = xmr_data, 
+<pre><code class="r">xmr_chart(xmr_data, 
           time = &quot;Time&quot;, 
           measure = &quot;Measure&quot;,
           line_width = 0.75, text_size = 12, point_size = 2.5)
 </code></pre>
-
-<p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-7"/></p>
 
 <p>A work-flow that I use is to &#39;pipe&#39; the output of <code>xmr()</code> directly into <code>xmr_chart()</code>:</p>
 
@@ -725,6 +548,7 @@ install.packages(&quot;tidyverse&quot;)
 
 #this just loads the ones we need
 library(dplyr)
+library(purrr)
 library(ggplot2)
 </code></pre>
 
@@ -752,348 +576,22 @@ library(ggplot2)
 <p>Take our multiple factor data <code>MFD</code> - here is how to apply the <code>xmr()</code> function to certain groups within that data. </p>
 
 <pre><code class="r">MFD_xmr &lt;- MFD %&gt;% 
-  group_by(Variable) %&gt;% 
-  do(xmr(., &quot;Measure&quot;, recalc = T))
+  group_split(Variable)  %&gt;% 
+  map(xmr, measure = &quot;Measure&quot;, recalc = T) %&gt;%
+  map_df(as_tibble)
 </code></pre>
 
 <p>To obtain the following:</p>
-
-<table><thead>
-<tr>
-<th align="center">Year</th>
-<th align="center">Variable</th>
-<th align="center">Measure</th>
-<th align="center">Order</th>
-<th align="center">Central Line</th>
-<th align="center">Moving Range</th>
-<th align="center">Average Moving Range</th>
-<th align="center">Lower Natural Process Limit</th>
-<th align="center">Upper Natural Process Limit</th>
-</tr>
-</thead><tbody>
-<tr>
-<td align="center">2004</td>
-<td align="center">A</td>
-<td align="center">38</td>
-<td align="center">1</td>
-<td align="center">59.000</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-</tr>
-<tr>
-<td align="center">2005</td>
-<td align="center">A</td>
-<td align="center">78</td>
-<td align="center">2</td>
-<td align="center">59.000</td>
-<td align="center">40</td>
-<td align="center">42.750</td>
-<td align="center">0</td>
-<td align="center">172.715</td>
-</tr>
-<tr>
-<td align="center">2006</td>
-<td align="center">A</td>
-<td align="center">93</td>
-<td align="center">3</td>
-<td align="center">59.000</td>
-<td align="center">15</td>
-<td align="center">42.750</td>
-<td align="center">0</td>
-<td align="center">172.715</td>
-</tr>
-<tr>
-<td align="center">2007</td>
-<td align="center">A</td>
-<td align="center">21</td>
-<td align="center">4</td>
-<td align="center">59.000</td>
-<td align="center">72</td>
-<td align="center">42.750</td>
-<td align="center">0</td>
-<td align="center">172.715</td>
-</tr>
-<tr>
-<td align="center">2008</td>
-<td align="center">A</td>
-<td align="center">65</td>
-<td align="center">5</td>
-<td align="center">59.000</td>
-<td align="center">44</td>
-<td align="center">42.750</td>
-<td align="center">0</td>
-<td align="center">172.715</td>
-</tr>
-<tr>
-<td align="center">2009</td>
-<td align="center">A</td>
-<td align="center">13</td>
-<td align="center">6</td>
-<td align="center">13.667</td>
-<td align="center">52</td>
-<td align="center">34.667</td>
-<td align="center">0</td>
-<td align="center">105.880</td>
-</tr>
-<tr>
-<td align="center">2010</td>
-<td align="center">A</td>
-<td align="center">27</td>
-<td align="center">7</td>
-<td align="center">13.667</td>
-<td align="center">14</td>
-<td align="center">34.667</td>
-<td align="center">0</td>
-<td align="center">105.880</td>
-</tr>
-<tr>
-<td align="center">2011</td>
-<td align="center">A</td>
-<td align="center">39</td>
-<td align="center">8</td>
-<td align="center">13.667</td>
-<td align="center">12</td>
-<td align="center">34.667</td>
-<td align="center">0</td>
-<td align="center">105.880</td>
-</tr>
-<tr>
-<td align="center">2012</td>
-<td align="center">A</td>
-<td align="center">1</td>
-<td align="center">9</td>
-<td align="center">13.667</td>
-<td align="center">38</td>
-<td align="center">34.667</td>
-<td align="center">0</td>
-<td align="center">105.880</td>
-</tr>
-<tr>
-<td align="center">2013</td>
-<td align="center">A</td>
-<td align="center">38</td>
-<td align="center">10</td>
-<td align="center">13.667</td>
-<td align="center">37</td>
-<td align="center">34.667</td>
-<td align="center">0</td>
-<td align="center">105.880</td>
-</tr>
-<tr>
-<td align="center">2014</td>
-<td align="center">A</td>
-<td align="center">87</td>
-<td align="center">11</td>
-<td align="center">13.667</td>
-<td align="center">49</td>
-<td align="center">34.667</td>
-<td align="center">0</td>
-<td align="center">105.880</td>
-</tr>
-<tr>
-<td align="center">2015</td>
-<td align="center">A</td>
-<td align="center">34</td>
-<td align="center">12</td>
-<td align="center">13.667</td>
-<td align="center">53</td>
-<td align="center">34.667</td>
-<td align="center">0</td>
-<td align="center">105.880</td>
-</tr>
-<tr>
-<td align="center">2016</td>
-<td align="center">A</td>
-<td align="center">48</td>
-<td align="center">13</td>
-<td align="center">13.667</td>
-<td align="center">14</td>
-<td align="center">34.667</td>
-<td align="center">0</td>
-<td align="center">105.880</td>
-</tr>
-<tr>
-<td align="center">2017</td>
-<td align="center">A</td>
-<td align="center">60</td>
-<td align="center">14</td>
-<td align="center">13.667</td>
-<td align="center">12</td>
-<td align="center">34.667</td>
-<td align="center">0</td>
-<td align="center">105.880</td>
-</tr>
-<tr>
-<td align="center">2004</td>
-<td align="center">B</td>
-<td align="center">49</td>
-<td align="center">1</td>
-<td align="center">59.400</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-<td align="center">NA</td>
-</tr>
-<tr>
-<td align="center">2005</td>
-<td align="center">B</td>
-<td align="center">19</td>
-<td align="center">2</td>
-<td align="center">59.400</td>
-<td align="center">30</td>
-<td align="center">30.500</td>
-<td align="center">0</td>
-<td align="center">140.530</td>
-</tr>
-<tr>
-<td align="center">2006</td>
-<td align="center">B</td>
-<td align="center">83</td>
-<td align="center">3</td>
-<td align="center">59.400</td>
-<td align="center">64</td>
-<td align="center">30.500</td>
-<td align="center">0</td>
-<td align="center">140.530</td>
-</tr>
-<tr>
-<td align="center">2007</td>
-<td align="center">B</td>
-<td align="center">67</td>
-<td align="center">4</td>
-<td align="center">59.400</td>
-<td align="center">16</td>
-<td align="center">30.500</td>
-<td align="center">0</td>
-<td align="center">140.530</td>
-</tr>
-<tr>
-<td align="center">2008</td>
-<td align="center">B</td>
-<td align="center">79</td>
-<td align="center">5</td>
-<td align="center">59.400</td>
-<td align="center">12</td>
-<td align="center">30.500</td>
-<td align="center">0</td>
-<td align="center">140.530</td>
-</tr>
-<tr>
-<td align="center">2009</td>
-<td align="center">B</td>
-<td align="center">11</td>
-<td align="center">6</td>
-<td align="center">59.400</td>
-<td align="center">68</td>
-<td align="center">30.500</td>
-<td align="center">0</td>
-<td align="center">140.530</td>
-</tr>
-<tr>
-<td align="center">2010</td>
-<td align="center">B</td>
-<td align="center">72</td>
-<td align="center">7</td>
-<td align="center">59.400</td>
-<td align="center">61</td>
-<td align="center">30.500</td>
-<td align="center">0</td>
-<td align="center">140.530</td>
-</tr>
-<tr>
-<td align="center">2011</td>
-<td align="center">B</td>
-<td align="center">41</td>
-<td align="center">8</td>
-<td align="center">59.400</td>
-<td align="center">31</td>
-<td align="center">30.500</td>
-<td align="center">0</td>
-<td align="center">140.530</td>
-</tr>
-<tr>
-<td align="center">2012</td>
-<td align="center">B</td>
-<td align="center">82</td>
-<td align="center">9</td>
-<td align="center">59.400</td>
-<td align="center">41</td>
-<td align="center">30.500</td>
-<td align="center">0</td>
-<td align="center">140.530</td>
-</tr>
-<tr>
-<td align="center">2013</td>
-<td align="center">B</td>
-<td align="center">65</td>
-<td align="center">10</td>
-<td align="center">59.400</td>
-<td align="center">17</td>
-<td align="center">30.500</td>
-<td align="center">0</td>
-<td align="center">140.530</td>
-</tr>
-<tr>
-<td align="center">2014</td>
-<td align="center">B</td>
-<td align="center">78</td>
-<td align="center">11</td>
-<td align="center">59.400</td>
-<td align="center">13</td>
-<td align="center">30.500</td>
-<td align="center">0</td>
-<td align="center">140.530</td>
-</tr>
-<tr>
-<td align="center">2015</td>
-<td align="center">B</td>
-<td align="center">55</td>
-<td align="center">12</td>
-<td align="center">59.400</td>
-<td align="center">23</td>
-<td align="center">30.500</td>
-<td align="center">0</td>
-<td align="center">140.530</td>
-</tr>
-<tr>
-<td align="center">2016</td>
-<td align="center">B</td>
-<td align="center">53</td>
-<td align="center">13</td>
-<td align="center">59.400</td>
-<td align="center">2</td>
-<td align="center">30.500</td>
-<td align="center">0</td>
-<td align="center">140.530</td>
-</tr>
-<tr>
-<td align="center">2017</td>
-<td align="center">B</td>
-<td align="center">79</td>
-<td align="center">14</td>
-<td align="center">59.400</td>
-<td align="center">26</td>
-<td align="center">30.500</td>
-<td align="center">0</td>
-<td align="center">140.530</td>
-</tr>
-</tbody></table>
 
 <p>And as you may be able to see in the data, the <code>xmr()</code> calculated on Measure <strong>BY</strong> Variable in one chained function instead of having to manually split the data and run the function multiple times. This is possible with an arbitrary number of factors, and leverages the speed of <code>dplyr</code> verbs. </p>
 
 <p>Similarly, <code>ggplot2</code> can be leveraged in plotting. Note that since <code>xmr_chart()</code> outputs a ggplot object, we can apply the regular ggplot2 functions to it and return a faceted chart rather than filtering the chart and making two.</p>
 
-<pre><code class="r">MFD %&gt;% 
-  group_by(Variable) %&gt;% 
-  do(xmr(., &quot;Measure&quot;, recalc = T)) %&gt;% 
+<pre><code class="r">MFD_xmr %&gt;% 
   xmr_chart(&quot;Year&quot;, &quot;Measure&quot;, line_width = 0.75, text_size = 12) + 
   facet_wrap(~Variable) + 
   scale_x_discrete(breaks = seq(2004, 2017, 4))
 </code></pre>
-
-<p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-13"/></p>
 
 </body>
 
